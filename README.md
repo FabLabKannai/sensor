@@ -12,5 +12,5 @@ Separately , requires the Arduino UNO and WiFi shield .
 ## Blog (in Japanese)
 http://fablab-kannai.org/archives/787
 
-## Screenshot
-![screenshot](https://raw.githubusercontent.com/FabLabKannai/sensor/master/docs/sensor_shield_with_pc.png)
+## Photo
+(https://raw.githubusercontent.com/FabLabKannai/sensor/master/docs/sensor_shield_with_pc.png)
