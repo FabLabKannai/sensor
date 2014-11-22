@@ -5,8 +5,8 @@
  * 2014-08-20
  */
 
-	define( "DB_USER", "ohwada" );
-	define( "DB_PASS", "k4bg7QPf" );
+	define( "DB_USER", "yourName" );
+	define( "DB_PASS", "YourPassword" );
 
 	define( "TITLE", "FabLab Kannai Sensor Project" );
 

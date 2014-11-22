@@ -116,7 +116,7 @@ EOT;
 	 * get_add_form
 	 */		
 	private function get_add_form() {
-		$params = $this->db->make_params_table_item( 0, 0, 0, 0, 0, 0 );
+		$params = $this->db->make_params_table_item( 0, 0, 0, 0, 0, 0, 0 );
 		return $this->get_form( "add", "Add", 0, $params );
 	}
 

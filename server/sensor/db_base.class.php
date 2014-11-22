@@ -6,8 +6,9 @@
  */
 class DB_Base {
 
+	const DEBUG = false;
 	const SERVER = "localhost";
-
+	
 	protected $conn = null;
 	protected 	$sql = "";
 	protected $errors = null;
@@ -139,6 +140,9 @@ class DB_Base {
     	if ( !$ret ) {
     		$this->add_error( $sql );
     		$this->add_error( mysql_error() );
+    		if ( self::DEBUG ) {
+    			echo $this->get_error( "<br/>\n" );
+    		}	 
     		return false;
     	}
     	return $ret;
@@ -213,7 +217,7 @@ class DB_Base {
 	/**
 	 * get_error
 	 */	
-	protected function get_error( $glue="\n" ) {
+	public function get_error( $glue="\n" ) {
 		if ( !is_array($this->errors) || !count($this->errors) ) return false;
 		return implode( $glue, $this->errors );
 	}    
