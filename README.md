@@ -9,6 +9,10 @@ This shield have sensors below .
 - Noise : Condenser Microphone C9267
 Separately , requires the Arduino UNO and WiFi shield .
 
+## License
+Souce code : Apache License 2.0<br>
+Othes :  Creative Commons BY-SA
+
 ## Blog (in Japanese)
 http://fablab-kannai.org/archives/787
 
