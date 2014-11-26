@@ -23,7 +23,10 @@ Souce code : Apache License 2.0<br>
 Othes :  Creative Commons BY-SA
 
 ## Blog (in Japanese)
-http://fablab-kannai.org/archives/787
+Sensor Project<br>
+http://fablab-kannai.org/sensor_project <br>
+Aruduino Sensor Shield<br>
+http://fablab-kannai.org/archives/787 <br>
 
 ## Photo
 ![photo](https://raw.githubusercontent.com/FabLabKannai/sensor/master/docs/sensor_shield_with_pc.png)
