@@ -1,13 +1,22 @@
 FabLab Kannai Sensor Project
 ======
 
-Aruduino Sensor Shield.<br>
-This shield have sensors below .
-- Temperature and humidity : DHT11
-- Air Pressure : MPL115A2
-- Light : NJL7502L
-- Noise : Condenser Microphone C9267
-Separately , requires the Arduino UNO and WiFi shield .
+### Aruduino Sensor Shield.
+This shield have sensors below .<br>
+- Temperature and humidity : DHT11<br>
+- Air Pressure : MPL115A2<br>
+- Light : NJL7502L<br>
+- Noise : Condenser Microphone C9267<br>
+
+Separately, requires the Arduino UNO and WiFi shield .<br>
+
+## Sample code
+Two types of Arduino sketch 
+- Display the measured values on the PC with USB serial.
+- Send the measured values to the server with WiFi shield.
+
+Server side program
+- Receive the measured values, and display on WEB site.
 
 ## License
 Souce code : Apache License 2.0<br>
