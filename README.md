@@ -1,7 +1,7 @@
 FabLab Kannai Sensor Project
 ======
 
-### Aruduino Sensor Shield.
+### Arduino Sensor Shield.
 This shield have sensors below .<br>
 - Temperature and humidity : DHT11<br>
 - Air Pressure : MPL115A2<br>
