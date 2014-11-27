@@ -25,7 +25,7 @@ Othes :  Creative Commons BY-SA
 ## Blog (in Japanese)
 Sensor Project<br>
 http://fablab-kannai.org/sensor_project <br>
-Aruduino Sensor Shield<br>
+Arduino Sensor Shield<br>
 http://fablab-kannai.org/archives/787 <br>
 
 ## Photo
