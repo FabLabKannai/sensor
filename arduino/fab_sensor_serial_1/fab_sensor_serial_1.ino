@@ -34,6 +34,10 @@
 // Temperature & Humidity
 #include <DHT.h>
 
+// 0 : send to pc
+// 1 : send to 7seg display
+#define MODE_DISPLAY  0
+
 // Pins
 #define PIN_DHT  3
 #define PIN_LED  9
@@ -54,7 +58,11 @@
 #define SERIAL_SPEED  9600
 
 // loop
-#define TIME_LOOP  500  // 0.5 sec
+#if MODE_DISPLAY
+	#define TIME_LOOP  10000  // 10 sec
+#else	
+	#define TIME_LOOP  500  // 0.5 sec
+#endif
 
 // DHT
 DHT dht( PIN_DHT, DHTTYPE );
@@ -120,7 +128,18 @@ boolean send_data() {
     float noise = abs( noise_raw - NOISE_OFFSET );
   	// air pressure
     float pressure = 10 * mpl115a2.getPressure();
+    #if MODE_DISPLAY
+        send_display( temp, humi, pressure, light, noise );
+	#else        
+		send_pc( temp, humi, pressure, light, noise );
+    #endif
+}
 
+/**
+ * send to pc
+ * temperature:11.1, humidity:22.2, pressure:33.3, light:44.4, noise:55.5
+ */
+void send_pc( float temp, float humi, float pressure, float light, float noise ) {
 	String str_temp = conv_string( temp );
 	String str_humi = conv_string( humi );
 	String str_light = conv_string( light );
@@ -138,6 +157,25 @@ boolean send_data() {
 	Serial.print( str_light );
 	Serial.print( ", noise:" );
 	Serial.print( str_noise );
+	Serial.println();
+}
+
+/**
+ * send to 7seg display
+ * t11$h22$p33$l44$n55$
+ */
+void send_display( float temp, float humi, float pressure, float light, float noise ) {
+	Serial.print( "t" );
+	Serial.print( (int)temp );
+	Serial.print( "$h" );
+	Serial.print( (int)humi );
+	Serial.print( "$p" );
+	Serial.print( (int)pressure );
+	Serial.print( "$l" );
+	Serial.print( (int)light );
+	Serial.print( "$n" );
+	Serial.print( (int)noise );
+	Serial.print( "$" );
 	Serial.println();
 }
 
