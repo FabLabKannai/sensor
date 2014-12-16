@@ -46,17 +46,31 @@ class MainGraph {
 		$rows2 = $this->db->reduce_rows( $rows1 );			
 		$name = $this->NAMES[ $kind ];
 
+		$n = 0;
+		$xd = array();					
+		$yd = array();
+		foreach( $rows2 as $row ) {
+			$temp = $row["temperature"];	
+			$humi = $row["humidity"];
+			$light = $row["light"];
+			$noise = $row["noise"];				
+			if (( $temp != 0 )&&( $humi > 0 )&&( $light > 0 )&&( $noise > 0 )) {		
+				$xd[ $n ] = $row["time"];	
+				$y = $row[ $name ];
+				if ( $y < $min ) {
+					$y = $min;
+				}
+				$yd[ $n ] = $y;						
+				$n++;
+			}		
+		}
+		
 		$xdata = array();					
 		$ydata = array();
-		$i = count($rows2) - 1;
-		foreach( $rows2 as $row ) {
-			$xdata[ $i ] = $row["time"];	
-			$y = abs( $row[ $name ] );
-			if ( $y < $min ) {
-				 $y = $min;
-			}
-			$ydata[ $i ] = $y;						
-			$i--;	
+		for( $i = 0; $i < $n; $i++ ) {
+			$j = $n - $i - 1;
+			$xdata[ $j ] = $xd[ $i ];	
+			$ydata[ $j ] = $yd[ $i ];							
 		}
 
 		// The code to setup a very basic graph
