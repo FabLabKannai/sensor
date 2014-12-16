@@ -46,6 +46,7 @@ class MainGraph {
 		$rows2 = $this->db->reduce_rows( $rows1 );			
 		$name = $this->NAMES[ $kind ];
 
+		// remove all zero data
 		$n = 0;
 		$xd = array();					
 		$yd = array();
@@ -64,7 +65,8 @@ class MainGraph {
 				$n++;
 			}		
 		}
-		
+
+		// set x y data		
 		$xdata = array();					
 		$ydata = array();
 		for( $i = 0; $i < $n; $i++ ) {
