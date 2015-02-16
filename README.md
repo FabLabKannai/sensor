@@ -18,6 +18,13 @@ Two types of Arduino sketch
 Server side program
 - Receive the measured values, and display on WEB site.
 
+## Directries
+arduino : Arduino sketch <br>
+server : Server side program, PHP <br>
+eagle : Board data, Eagle format <br>
+case : Case data, Adobe illustrator format <br>
+docs : Photos and documents <br>
+
 ## License
 Souce code : Apache License 2.0<br>
 Othes :  Creative Commons BY-SA
